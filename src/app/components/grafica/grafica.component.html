@@ -1,0 +1,33 @@
+<h1> Gráfica dinámica </h1>
+<hr>
+
+<div class="column small-12 large-2">
+    <label class="sbw_light">
+      Tipo de Grafica:</label><br />
+    <select name="grafica" (change)="activarLineChart($event)">
+     <option value="">---Please select---</option>
+     <option value="linechart">Line Chart</option>
+     <option value="barchart" >Bar Chart</option>
+  </select>
+</div>
+
+<hr>
+<br>
+<div class="flex" id="linechart" style="display: none">
+    <span>Line Chart</span>
+    <div class="flex-item">
+        <div style="display: block;">
+            <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [chartType]="'line'"></canvas>
+        </div>
+    </div>
+</div>
+
+
+<div class="flex" id="barchart" style="display: none">
+    <span>Bar Chart</span>
+    <div class="flex-item">
+        <div style="display: block">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+        </div>
+    </div>
+</div>
